@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [score, setScore] = useState(0);
@@ -63,8 +64,7 @@ export default function Home() {
   return (
     <>
       <main className="rps-game">
-        <div className="container">
-          <div className="score">Score: {score}</div>
+        {/* <div className="score">Score: {score}</div>
           {!showResult ? (
             <div className="set-chips">
               <button name="rock" onClick={(e) => chooseChips(e)}>
@@ -85,7 +85,11 @@ export default function Home() {
               <h1>{result}</h1>
               <button onClick={playAgain}>Play Again</button>
             </div>
-          ) : null}
+          ) : null} */}
+        <h1>Choose mode you want to play.</h1>
+        <div className="rps-game__button">
+          <Link href="/original">Original Mode</Link>
+          <Link href="/original">Advance Mode</Link>
         </div>
       </main>
     </>

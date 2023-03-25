@@ -1,0 +1,17 @@
+:root {
+  /** Background **/
+  --background: radial-gradient(#1f3756, #141539);
+
+  /** Primary **/
+  --scissor-gradient: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  --paper-gradient: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  --rock-gradient: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  --lizard-gradient: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+  --cyan-gradient: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+
+  /** Neutral **/
+  --dark-color: #3b4363;
+  --score-color: #2a46c0;
+  --header-outline: #606e85;
+  --white-color: #ffffff;
+}
