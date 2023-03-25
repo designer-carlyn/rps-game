@@ -57,7 +57,7 @@ export default function Home() {
     }
 
     if (result === "You Won") {
-      setScore(score + 1);
+      setScore((score) => score + 1);
     }
   }, [result, youPicked, housePicked]);
 
@@ -65,27 +65,27 @@ export default function Home() {
     <>
       <main className="rps-game">
         {/* <div className="score">Score: {score}</div>
-          {!showResult ? (
-            <div className="set-chips">
-              <button name="rock" onClick={(e) => chooseChips(e)}>
-                Rock
-              </button>
-              <button name="paper" onClick={(e) => chooseChips(e)}>
-                Paper
-              </button>
-              <button name="scissor" onClick={(e) => chooseChips(e)}>
-                Scissor
-              </button>
-            </div>
-          ) : null}
-          {showResult ? (
-            <div className="result">
-              <h1>You Picked: {youPicked}</h1>
-              <h1>The House Picked: {housePicked}</h1>
-              <h1>{result}</h1>
-              <button onClick={playAgain}>Play Again</button>
-            </div>
-          ) : null} */}
+        {!showResult ? (
+          <div className="set-chips">
+            <button name="rock" onClick={(e) => chooseChips(e)}>
+              Rock
+            </button>
+            <button name="paper" onClick={(e) => chooseChips(e)}>
+              Paper
+            </button>
+            <button name="scissor" onClick={(e) => chooseChips(e)}>
+              Scissor
+            </button>
+          </div>
+        ) : null}
+        {showResult ? (
+          <div className="result">
+            <h1>You Picked: {youPicked}</h1>
+            <h1>The House Picked: {housePicked}</h1>
+            <h1>{result}</h1>
+            <button onClick={playAgain}>Play Again</button>
+          </div>
+        ) : null} */}
         <h1>Choose mode you want to play.</h1>
         <div className="rps-game__button">
           <Link href="/original">Original Mode</Link>
