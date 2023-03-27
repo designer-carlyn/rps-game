@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import ScoreBoard from "@/components/score-board";
+import { ScoreContext } from "@/context/rps-context";
 import Image from "next/image";
 import "animate.css";
 
-/** Image **/
-import logoScoreBoard from "../public/static/images/logo.svg";
 import iconPaper from "../public/static/images/icon-paper.svg";
 import iconScissors from "../public/static/images/icon-scissors.svg";
 import iconRock from "../public/static/images/icon-rock.svg";
 
 export default function Original() {
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useContext(ScoreContext);
   const [youPicked, setYouPicked] = useState("scissors");
   const [housePicked, setHousePicked] = useState("paper");
   const [playing, setPlaying] = useState(false);
@@ -70,20 +70,16 @@ export default function Original() {
     if (result !== "") {
       finalResult();
     }
+
+    if (result === "You Won") {
+      setScore((score) => score + 1);
+    }
   }, [result, youPicked, housePicked, youWon]);
 
   return (
     <main className="rps-original">
       <div className="container">
-        <div className="rps-original__scoreboard">
-          <div className="scoreboard-logo">
-            <Image src={logoScoreBoard} alt="logo-original"></Image>
-          </div>
-          <div className="scoreboard-points">
-            <small>SCORE</small>
-            <h1>12</h1>
-          </div>
-        </div>
+        <ScoreBoard></ScoreBoard>
         {!playing ? (
           <>
             <div className="rps-original__picking">
