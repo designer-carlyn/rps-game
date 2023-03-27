@@ -96,11 +96,10 @@
   }
 
   &__playing {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 
     .playing-wrapper {
-      width: 100%;
       text-align: center;
       position: relative;
 

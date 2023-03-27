@@ -13,6 +13,7 @@ export default function Original() {
   const [housePicked, setHousePicked] = useState("scissors");
   const [playing, setPlaying] = useState(true);
   const [youWon, setYouWon] = useState();
+  const [showResult, setShowResult] = useState(false);
 
   const chipElement = ["rock", "paper", "scissors"];
 
