@@ -11,7 +11,7 @@
     padding: 15px;
     border: 3px solid var(--header-outline);
     border-radius: 10px;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
 
     .scoreboard-points {
       margin-left: auto;
@@ -45,30 +45,8 @@
     margin: auto;
     position: relative;
 
-    .picking-chip {
-      cursor: pointer;
+    .wrapper-chip {
       position: absolute;
-      border-radius: 100px;
-      transition: all 0.1s ease-in-out;
-
-      .chip-wrapper {
-        background: #eaeaea;
-        box-shadow: rgba(8, 8, 8, 0.3) 1px 8px 0px -2px inset;
-        width: 120px;
-        height: 120px;
-        margin: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 100px;
-        position: relative;
-
-        img {
-          width: 60px;
-          height: 60px;
-          object-fit: contain;
-        }
-      }
 
       button {
         position: absolute;
@@ -79,15 +57,13 @@
         height: 100%;
         z-index: 1;
         cursor: pointer;
-
+    
         &:focus {
           display: none;
         }
       }
 
       &.paper-chip {
-        background: var(--paper-gradient);
-        box-shadow: #2945c0 1px 10px 0px -2px;
         top: -10%;
         left: -10%;
 
@@ -97,9 +73,7 @@
         }
       }
 
-      &.scissor-chip {
-        background: var(--scissor-gradient);
-        box-shadow: #c36b23 1px 10px 0px -2px;
+      &.scissors-chip {
         top: -10%;
         right: -10%;
 
@@ -110,14 +84,43 @@
       }
 
       &.rock-chip {
-        background: var(--rock-gradient);
-        box-shadow: #a11635 1px 10px 0px -2px;
         bottom: 0;
         left: 25%;
 
         &:hover {
           animation: bounce;
           animation-duration: 1s;
+        }
+      }
+    }
+  }
+
+  &__playing {
+    display: flex;
+    align-items: center;
+
+    .playing-wrapper {
+      width: 100%;
+      text-align: center;
+      position: relative;
+
+      h1 {
+        margin-bottom: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      .wrapper-chip {
+        margin: auto;
+        width: 250px;
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation-duration: 2.5s;
+
+        .chip-image {
+          margin: 0;
         }
       }
     }

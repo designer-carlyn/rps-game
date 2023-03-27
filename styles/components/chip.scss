@@ -1,0 +1,65 @@
+.wrapper-chip {
+  cursor: pointer;
+  border-radius: 100%;
+
+  .chip-image {
+    width: 130px;
+    height: 130px;
+    margin: 25px;
+    background: #eaeaea;
+    box-shadow: rgba(8, 8, 8, 0.3) 1px 8px 0px -2px inset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    position: relative;
+
+    img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+    }
+  }
+
+  &.paper-chip {
+    background: var(--paper-gradient);
+    box-shadow: #2945c0 1px 10px 0px -2px;
+  }
+
+  &.scissors-chip {
+    background: var(--scissors-gradient);
+    box-shadow: #c36b23 1px 10px 0px -2px;
+  }
+
+  &.rock-chip {
+    background: var(--rock-gradient);
+    box-shadow: #a11635 1px 10px 0px -2px;
+  }
+
+  &.winner-paper-chip {
+    background: var(--paper-gradient);
+    box-shadow: 0px 0px 0px 50px rgba(255,255,255,0.03), 0px 0px 0px 100px rgba(255,255,255,0.01), 0px 0px 0px 150px rgba(255,255,255,0.01), #2945c0 1px 10px 0px -2px;
+  }
+
+  &.winner-scissors-chip {
+    background: var(--scissors-gradient);
+    box-shadow: 0px 0px 0px 50px rgba(255,255,255,0.03), 0px 0px 0px 100px rgba(255,255,255,0.01), 0px 0px 0px 150px rgba(255,255,255,0.01), #c36b23 1px 10px 0px -2px;
+  }
+
+  &.winner-rock-chip {
+    background: var(--rock-gradient);
+    box-shadow: 0px 0px 0px 50px rgba(255,255,255,0.03), 0px 0px 0px 100px rgba(255,255,255,0.01), 0px 0px 0px 150px rgba(255,255,255,0.01), #a11635 1px 10px 0px -2px;
+  }
+
+  &.wrapper-chip--lg {
+    .chip-image {
+      width: 200px;
+      height: 200px;
+
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}
