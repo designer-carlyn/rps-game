@@ -8,6 +8,7 @@ export default function Home() {
   const [result, setResult] = useState("");
   const [showResult, setShowResult] = useState(false);
   const [counter, setCounter] = useState("");
+  const [life, setLife] = useState(3);
 
   const elementChips = ["rock", "scissor", "paper"];
 
@@ -58,13 +59,26 @@ export default function Home() {
 
     if (result === "You Won") {
       setScore((score) => score + 1);
+    } else if (result === "You Lose") {
+      setLife((life) => life - 1);
+    }
+
+    if (life === 0) {
+      alert("Your best score is " + score + " point(s)");
+      setScore(0);
+      setLife(3);
     }
   }, [result, youPicked, housePicked]);
 
   return (
     <>
       <main className="rps-game">
-        {/* <div className="score">Score: {score}</div>
+        {/* <div className="score">
+          You have {life} {life > 1 ? "lives" : "life"} to play
+        </div>
+        <div className="score">
+          Score: {score} {score > 1 ? "points" : "point"}
+        </div>
         {!showResult ? (
           <div className="set-chips">
             <button name="rock" onClick={(e) => chooseChips(e)}>
