@@ -22,10 +22,6 @@ function ScoreStatus() {
   return (
     <div className="rps-status">
       <div className="status-item">
-        <small>Best Score</small>
-        <div className="item-best">{bestScore}</div>
-      </div>
-      <div className="status-item">
         <small>Your {life > 1 ? "Lives" : "Life"}</small>
         <div className="item-life">
           {life === 3 ? (
@@ -54,6 +50,10 @@ function ScoreStatus() {
             </>
           )}
         </div>
+      </div>
+      <div className="status-item">
+        <small>Best Score</small>
+        <div className="item-best">{bestScore}</div>
       </div>
     </div>
   );
