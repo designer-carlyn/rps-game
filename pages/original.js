@@ -71,6 +71,18 @@ export default function Original() {
     setHousePicked("");
     setResult("");
     setYouWon("");
+
+    if (life === 0) {
+      setScore(0);
+      setLife(3);
+
+      if (score > bestScore) {
+        alert("Your new best score is " + score);
+        setBestScore(score);
+      } else {
+        alert("Your score is " + score);
+      }
+    }
   }
 
   useEffect(() => {
@@ -80,18 +92,10 @@ export default function Original() {
 
     if (result == "You Won") {
       setScore((score) => score + 1);
-    } else if (result === "You Lose") {
-      setLife((life) => life - 1);
     }
 
-    if (life === 0) {
-      alert("Your best score is " + score + " point(s)");
-      setScore(0);
-      setLife(3);
-
-      if (score > bestScore) {
-        setBestScore(score);
-      }
+    if (result == "You Lose") {
+      setLife((life) => life - 1);
     }
   }, [result, youPicked, housePicked, youWon]);
 

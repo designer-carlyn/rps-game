@@ -17,7 +17,7 @@ import { useState, useEffect } from "react";
 export default function App({ Component, pageProps }) {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
-  const [life, setLife] = useState(3);
+  const [life, setLife] = useState(0);
 
   useEffect(() => {
     const score = JSON.parse(localStorage.getItem("score"));
