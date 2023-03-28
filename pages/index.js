@@ -73,7 +73,7 @@ export default function Home() {
   return (
     <>
       <main className="rps-game">
-        <div className="score">
+        {/* <div className="score">
           You have {life} {life > 1 ? "lives" : "life"} to play
         </div>
         <div className="score">
@@ -91,7 +91,7 @@ export default function Home() {
               Scissor
             </button>
           </div>
-        ) : null}
+        ) : null} */}
         {/* {showResult ? (
           <div className="result">
             <h1>You Picked: {youPicked}</h1>
