@@ -1,0 +1,37 @@
+.rps-status {
+  margin: auto;
+  border-radius: 10px;
+
+  .status-item {
+    background-color: var(--white-color);
+    color: var(--dark-color);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 130px;
+
+    &:nth-child(2) {
+      margin-top: 10px;
+    }
+
+    small {
+      color: var(--score-color);
+      font-size: 16px;
+    }
+
+    .item-best {
+      font-size: 40px;
+      line-height: 1;
+      color: #007C00;
+    }
+
+    .item-life {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-gap: 5px;
+      margin-top: 5px;
+    }
+  }
+}

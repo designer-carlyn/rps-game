@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import ScoreBoard from "@/components/score-board";
-import { ScoreContext } from "@/context/rps-context";
+import ScoreStatus from "@/components/score-status";
+import {
+  ScoreContext,
+  LifeContext,
+  BestScoreContext,
+} from "@/context/rps-context";
 import Image from "next/image";
 import "animate.css";
 
@@ -10,6 +15,8 @@ import iconRock from "../public/static/images/icon-rock.svg";
 
 export default function Original() {
   const [score, setScore] = useContext(ScoreContext);
+  const [life, setLife] = useContext(LifeContext);
+  const [bestScore, setBestScore] = useContext(BestScoreContext);
   const [youPicked, setYouPicked] = useState("");
   const [housePicked, setHousePicked] = useState("");
   const [playing, setPlaying] = useState(false);
@@ -73,13 +80,28 @@ export default function Original() {
 
     if (result == "You Won") {
       setScore((score) => score + 1);
+    } else if (result === "You Lose") {
+      setLife((life) => life - 1);
+    }
+
+    if (life === 0) {
+      alert("Your best score is " + score + " point(s)");
+      setScore(0);
+      setLife(3);
+
+      if (score > bestScore) {
+        setBestScore(score);
+      }
     }
   }, [result, youPicked, housePicked, youWon]);
 
   return (
     <main className="rps-original">
       <div className="container">
-        <ScoreBoard></ScoreBoard>
+        <div className="rps-original__header">
+          <ScoreBoard></ScoreBoard>
+          <ScoreStatus></ScoreStatus>
+        </div>
         {!playing ? (
           <>
             <div className="rps-original__picking">
