@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import ScoreBoard from "@/components/score-board";
 import ScoreStatus from "@/components/score-status";
+import { OriginalRules } from "@/components/rules";
 import {
   ScoreContext,
   LifeContext,
@@ -178,6 +179,7 @@ export default function Original() {
           </>
         ) : null}
       </div>
+      <OriginalRules></OriginalRules>
     </main>
   );
 }

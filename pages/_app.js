@@ -7,6 +7,7 @@ import "@/styles/pages/original.scss";
 import "@/styles/components/chip.scss";
 import "@/styles/components/score-board.scss";
 import "@/styles/components/score-status.scss";
+import "@/styles/components/rules.scss";
 import {
   ScoreContext,
   BestScoreContext,
