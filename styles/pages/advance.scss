@@ -1,11 +1,11 @@
 .rps-advance {
-  padding: 40px 0 0;
+  padding: 40px 0 20px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 
   @media screen and (max-width: 800px) {
-    padding: 20px 0 0;
+    padding: 20px ;
   }
 
   &__header {
