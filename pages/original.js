@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
+import Image from "next/image";
+import "animate.css";
 import ScoreBoard from "@/components/score-board";
 import ScoreStatus from "@/components/score-status";
 import RpsRules from "@/components/rules";
@@ -9,13 +11,12 @@ import {
   BestScoreContext,
 } from "@/context/rps-context";
 import { getRandomInt, originalChipElement } from "@/config.js";
-import Image from "next/image";
-import "animate.css";
 
 import iconPaper from "../public/static/images/icon-paper.svg";
 import iconScissors from "../public/static/images/icon-scissors.svg";
 import iconRock from "../public/static/images/icon-rock.svg";
 import originalRules from "../public/static/images/image-rules.svg";
+import originalLogo from "../public/static/images/logo.svg";
 
 export default function Original() {
   const [score, setScore] = useContext(ScoreContext);
@@ -101,35 +102,36 @@ export default function Original() {
     <main className="rps-original">
       <div className="container">
         <div className="rps-original__header">
-          <ScoreBoard></ScoreBoard>
+          <ScoreBoard
+            logoScoreBoard={originalLogo}
+            logoAlt="original-logo"
+          ></ScoreBoard>
           <ScoreStatus></ScoreStatus>
         </div>
         {!playing ? (
-          <>
-            <div className="rps-original__picking">
-              <button name="paper" onClick={(e) => chooseChip(e)}>
-                <span className="wrapper-chip paper-chip">
-                  <span className="chip-image">
-                    <Image src={iconPaper} alt="logo"></Image>
-                  </span>
+          <div className="rps-original__picking">
+            <button name="paper" onClick={(e) => chooseChip(e)}>
+              <span className="wrapper-chip paper-chip">
+                <span className="chip-image">
+                  <Image src={iconPaper} alt="logo"></Image>
                 </span>
-              </button>
-              <button name="scissors" onClick={(e) => chooseChip(e)}>
-                <span className="wrapper-chip scissors-chip">
-                  <span className="chip-image">
-                    <Image src={iconScissors} alt="logo"></Image>
-                  </span>
+              </span>
+            </button>
+            <button name="scissors" onClick={(e) => chooseChip(e)}>
+              <span className="wrapper-chip scissors-chip">
+                <span className="chip-image">
+                  <Image src={iconScissors} alt="logo"></Image>
                 </span>
-              </button>
-              <button name="rock" onClick={(e) => chooseChip(e)}>
-                <span className="wrapper-chip rock-chip">
-                  <span className="chip-image">
-                    <Image src={iconRock} alt="logo"></Image>
-                  </span>
+              </span>
+            </button>
+            <button name="rock" onClick={(e) => chooseChip(e)}>
+              <span className="wrapper-chip rock-chip">
+                <span className="chip-image">
+                  <Image src={iconRock} alt="logo"></Image>
                 </span>
-              </button>
-            </div>
-          </>
+              </span>
+            </button>
+          </div>
         ) : null}
         {playing ? (
           <RpsPlaying

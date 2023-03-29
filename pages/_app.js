@@ -4,6 +4,7 @@ import "@/styles/helpers/variables.scss";
 import "@/styles/layout/index.scss";
 import "@/styles/pages/home.scss";
 import "@/styles/pages/original.scss";
+import "@/styles/pages/advance.scss";
 import "@/styles/components/chip.scss";
 import "@/styles/components/score-board.scss";
 import "@/styles/components/score-status.scss";

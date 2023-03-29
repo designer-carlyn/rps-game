@@ -35,6 +35,16 @@
     box-shadow: #a11635 1px 10px 0px -2px;
   }
 
+  &.lizard-chip {
+    background: var(--lizard-gradient);
+    box-shadow: #5e36a6 1px 10px 0px -2px;
+  }
+
+  &.spock-chip {
+    background: var(--spock-gradient);
+    box-shadow: #2a8bae 1px 10px 0px -2px;
+  }
+
   &.winner-paper-chip {
     background: var(--paper-gradient);
     box-shadow: 0px 0px 0px 50px rgba(255,255,255,0.03), 0px 0px 0px 100px rgba(255,255,255,0.01), 0px 0px 0px 150px rgba(255,255,255,0.01), #2945c0 1px 10px 0px -2px;
@@ -48,6 +58,16 @@
   &.winner-rock-chip {
     background: var(--rock-gradient);
     box-shadow: 0px 0px 0px 50px rgba(255,255,255,0.03), 0px 0px 0px 100px rgba(255,255,255,0.01), 0px 0px 0px 150px rgba(255,255,255,0.01), #a11635 1px 10px 0px -2px;
+  }
+
+  &.winner-lizard-chip {
+    background: var(--lizard-gradient);
+    box-shadow: 0px 0px 0px 50px rgba(255,255,255,0.03), 0px 0px 0px 100px rgba(255,255,255,0.01), 0px 0px 0px 150px rgba(255,255,255,0.01), #5e36a6 1px 10px 0px -2px;
+  }
+
+  &.winner-spock-chip {
+    background: var(--spock-gradient);
+    box-shadow: 0px 0px 0px 50px rgba(255,255,255,0.03), 0px 0px 0px 100px rgba(255,255,255,0.01), 0px 0px 0px 150px rgba(255,255,255,0.01), #2a8bae 1px 10px 0px -2px;
   }
 
   &.wrapper-chip--lg {

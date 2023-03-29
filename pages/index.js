@@ -103,7 +103,7 @@ export default function Home() {
         <h1>Choose mode you want to play.</h1>
         <div className="rps-game__button">
           <Link href="/original">Original Mode</Link>
-          <Link href="/original">Advance Mode</Link>
+          <Link href="/advance">Advance Mode</Link>
         </div>
       </main>
     </>

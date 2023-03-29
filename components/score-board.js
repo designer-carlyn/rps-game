@@ -2,16 +2,13 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import { ScoreContext } from "@/context/rps-context";
 
-/** Image **/
-import logoScoreBoard from "../public/static/images/logo.svg";
-
-function ScoreBoard() {
+function ScoreBoard({ logoScoreBoard, logoAlt }) {
   const [score, setScore] = useContext(ScoreContext);
 
   return (
     <div className="rps-scoreboard">
       <div className="scoreboard-logo">
-        <Image src={logoScoreBoard} alt="logo-original"></Image>
+        <Image src={logoScoreBoard} alt={logoAlt}></Image>
       </div>
       <div className="scoreboard-points">
         <small>SCORE</small>
