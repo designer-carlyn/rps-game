@@ -10,7 +10,7 @@ import {
   LifeContext,
   BestScoreContext,
 } from "@/context/rps-context";
-import { getRandomInt, originalChipElement } from "@/config.js";
+import { getRandomInt, chipElement } from "@/config.js";
 
 import iconPaper from "../public/static/images/icon-paper.svg";
 import iconScissors from "../public/static/images/icon-scissors.svg";
@@ -35,7 +35,7 @@ export default function Original() {
     setPlaying(!playing);
 
     const housePicking = setInterval(() => {
-      setHousePicked(originalChipElement[getRandomInt(0, 3)]);
+      setHousePicked(chipElement[getRandomInt(0, 3)]);
     }, 75);
 
     setTimeout(() => {
