@@ -4,10 +4,11 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <title>RPS Game</title>
         <link rel="shortcut icon" href="/favicon.png" />
         <meta
           name="description"
-          content="Entertain your self by playing RPS."
+          content="Entertain yourself by playing RPS."
         ></meta>
         <meta property="og:title" content="RPS Game" />
         <meta property="og:type" content="website" />
