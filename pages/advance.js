@@ -77,7 +77,7 @@ const Advance = () => {
           </button>
         </div>
       </div>
-      <RpsRules imageRules={advanceRules}></RpsRules>
+      <RpsRules imageRules={advanceRules} points="2 points"></RpsRules>
     </main>
   );
 };

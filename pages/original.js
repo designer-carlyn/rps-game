@@ -144,7 +144,7 @@ export default function Original() {
           ></RpsPlaying>
         ) : null}
       </div>
-      <RpsRules imageRules={originalRules}></RpsRules>
+      <RpsRules imageRules={originalRules} points="1 point"></RpsRules>
     </main>
   );
 }
