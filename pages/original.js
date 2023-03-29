@@ -1,18 +1,20 @@
 import React, { useState, useEffect, useContext } from "react";
 import ScoreBoard from "@/components/score-board";
 import ScoreStatus from "@/components/score-status";
-import { OriginalRules } from "@/components/rules";
+import RpsRules from "@/components/rules";
 import {
   ScoreContext,
   LifeContext,
   BestScoreContext,
 } from "@/context/rps-context";
+import { getRandomInt, originalChipElement } from "@/config.js";
 import Image from "next/image";
 import "animate.css";
 
 import iconPaper from "../public/static/images/icon-paper.svg";
 import iconScissors from "../public/static/images/icon-scissors.svg";
 import iconRock from "../public/static/images/icon-rock.svg";
+import originalRules from "../public/static/images/image-rules.svg";
 
 export default function Original() {
   const [score, setScore] = useContext(ScoreContext);
@@ -25,19 +27,13 @@ export default function Original() {
   const [showResult, setShowResult] = useState(false);
   const [result, setResult] = useState("");
 
-  const chipElement = ["rock", "paper", "scissors"];
-
-  function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min) + min);
-  }
-
   function chooseChip(event) {
     let name = event.target.name;
     setYouPicked(name);
     setPlaying(!playing);
 
     const housePicking = setInterval(() => {
-      setHousePicked(chipElement[getRandomInt(0, 3)]);
+      setHousePicked(originalChipElement[getRandomInt(0, 3)]);
     }, 75);
 
     setTimeout(() => {
@@ -179,7 +175,7 @@ export default function Original() {
           </>
         ) : null}
       </div>
-      <OriginalRules></OriginalRules>
+      <RpsRules imageRules={originalRules}></RpsRules>
     </main>
   );
 }

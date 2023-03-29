@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-import originalRules from "../public/static/images/image-rules.svg";
 import iconClose from "../public/static/images/icon-close.svg";
 
-export const OriginalRules = () => {
+export const RpsRules = ({ imageRules }) => {
   const [showRules, setShowResult] = useState(false);
 
   function onClickShowRules() {
@@ -25,7 +24,7 @@ export const OriginalRules = () => {
           </button>
         </div>
         <div className="modal-image">
-          <Image src={originalRules} alt="original-rules" />
+          <Image src={imageRules} alt="rps-rules" />
         </div>
       </div>
       <div
@@ -38,10 +37,4 @@ export const OriginalRules = () => {
   );
 };
 
-export const AdvanceRules = () => {
-  return (
-    <div>
-      <h1>THIS IS THE ADVANCE RULES</h1>
-    </div>
-  );
-};
+export default RpsRules;
