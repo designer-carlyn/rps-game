@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
+import Head from "next/head";
 import "animate.css";
 import ScoreBoard from "@/components/score-board";
 import ScoreStatus from "@/components/score-status";
@@ -99,52 +100,57 @@ export default function Original() {
   }, [result, youPicked, housePicked, youWon]);
 
   return (
-    <main className="rps-original">
-      <div className="container">
-        <div className="rps-original__header">
-          <ScoreBoard
-            logoScoreBoard={originalLogo}
-            logoAlt="original-logo"
-          ></ScoreBoard>
-          <ScoreStatus></ScoreStatus>
-        </div>
-        {!playing ? (
-          <div className="rps-original__picking">
-            <button name="paper" onClick={(e) => chooseChip(e)}>
-              <span className="wrapper-chip paper-chip">
-                <span className="chip-image">
-                  <Image src={iconPaper} alt="logo"></Image>
-                </span>
-              </span>
-            </button>
-            <button name="scissors" onClick={(e) => chooseChip(e)}>
-              <span className="wrapper-chip scissors-chip">
-                <span className="chip-image">
-                  <Image src={iconScissors} alt="logo"></Image>
-                </span>
-              </span>
-            </button>
-            <button name="rock" onClick={(e) => chooseChip(e)}>
-              <span className="wrapper-chip rock-chip">
-                <span className="chip-image">
-                  <Image src={iconRock} alt="logo"></Image>
-                </span>
-              </span>
-            </button>
+    <>
+      <Head>
+        <title>Original Mode</title>
+      </Head>
+      <main className="rps-original">
+        <div className="container">
+          <div className="rps-original__header">
+            <ScoreBoard
+              logoScoreBoard={originalLogo}
+              logoAlt="original-logo"
+            ></ScoreBoard>
+            <ScoreStatus></ScoreStatus>
           </div>
-        ) : null}
-        {playing ? (
-          <RpsPlaying
-            youPicked={youPicked}
-            youWon={youWon}
-            housePicked={housePicked}
-            showResult={showResult}
-            result={result}
-            playAgain={playAgain}
-          ></RpsPlaying>
-        ) : null}
-      </div>
-      <RpsRules imageRules={originalRules} points="1 point"></RpsRules>
-    </main>
+          {!playing ? (
+            <div className="rps-original__picking">
+              <button name="paper" onClick={(e) => chooseChip(e)}>
+                <span className="wrapper-chip paper-chip">
+                  <span className="chip-image">
+                    <Image src={iconPaper} alt="logo"></Image>
+                  </span>
+                </span>
+              </button>
+              <button name="scissors" onClick={(e) => chooseChip(e)}>
+                <span className="wrapper-chip scissors-chip">
+                  <span className="chip-image">
+                    <Image src={iconScissors} alt="logo"></Image>
+                  </span>
+                </span>
+              </button>
+              <button name="rock" onClick={(e) => chooseChip(e)}>
+                <span className="wrapper-chip rock-chip">
+                  <span className="chip-image">
+                    <Image src={iconRock} alt="logo"></Image>
+                  </span>
+                </span>
+              </button>
+            </div>
+          ) : null}
+          {playing ? (
+            <RpsPlaying
+              youPicked={youPicked}
+              youWon={youWon}
+              housePicked={housePicked}
+              showResult={showResult}
+              result={result}
+              playAgain={playAgain}
+            ></RpsPlaying>
+          ) : null}
+        </div>
+        <RpsRules imageRules={originalRules} points="1 point"></RpsRules>
+      </main>
+    </>
   );
 }

@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/rest-countries-api-with-color-theme-switcher-SbUkIP75ct)
+- Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/rock-paper-scissors-game-2WXoPjYNEA)
 - Live Site URL: [Live site URL](https://cs-rps-game.netlify.app/)
 
 ### Built with

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
+import Head from "next/head";
 import "animate.css";
 import ScoreBoard from "@/components/score-board";
 import ScoreStatus from "@/components/score-status";
@@ -122,67 +123,72 @@ const Advance = () => {
   }, [result, youPicked, housePicked, youWon]);
 
   return (
-    <main className="rps-advance">
-      <div className="container">
-        <div className="rps-advance__header">
-          <ScoreBoard
-            logoScoreBoard={advanceLogo}
-            logoAlt="advance-logo"
-          ></ScoreBoard>
-          <ScoreStatus></ScoreStatus>
-        </div>
-        {!playing ? (
-          <div className="rps-advance__picking">
-            <button name="scissors" onClick={(e) => chooseChip(e)}>
-              <span className="wrapper-chip scissors-chip">
-                <span className="chip-image">
-                  <Image src={iconScissors} alt="logo"></Image>
-                </span>
-              </span>
-            </button>
-            <button name="paper" onClick={(e) => chooseChip(e)}>
-              <span className="wrapper-chip paper-chip">
-                <span className="chip-image">
-                  <Image src={iconPaper} alt="logo"></Image>
-                </span>
-              </span>
-            </button>
-            <button name="rock" onClick={(e) => chooseChip(e)}>
-              <span className="wrapper-chip rock-chip">
-                <span className="chip-image">
-                  <Image src={iconRock} alt="logo"></Image>
-                </span>
-              </span>
-            </button>
-            <button name="lizard" onClick={(e) => chooseChip(e)}>
-              <span className="wrapper-chip lizard-chip">
-                <span className="chip-image">
-                  <Image src={iconLizard} alt="logo"></Image>
-                </span>
-              </span>
-            </button>
-            <button name="spock" onClick={(e) => chooseChip(e)}>
-              <span className="wrapper-chip spock-chip">
-                <span className="chip-image">
-                  <Image src={iconSpock} alt="logo"></Image>
-                </span>
-              </span>
-            </button>
+    <>
+      <Head>
+        <title>Advance Mode</title>
+      </Head>
+      <main className="rps-advance">
+        <div className="container">
+          <div className="rps-advance__header">
+            <ScoreBoard
+              logoScoreBoard={advanceLogo}
+              logoAlt="advance-logo"
+            ></ScoreBoard>
+            <ScoreStatus></ScoreStatus>
           </div>
-        ) : null}
-        {playing ? (
-          <RpsPlaying
-            youPicked={youPicked}
-            youWon={youWon}
-            housePicked={housePicked}
-            showResult={showResult}
-            result={result}
-            playAgain={playAgain}
-          ></RpsPlaying>
-        ) : null}
-      </div>
-      <RpsRules imageRules={advanceRules} points="2 points"></RpsRules>
-    </main>
+          {!playing ? (
+            <div className="rps-advance__picking">
+              <button name="scissors" onClick={(e) => chooseChip(e)}>
+                <span className="wrapper-chip scissors-chip">
+                  <span className="chip-image">
+                    <Image src={iconScissors} alt="logo"></Image>
+                  </span>
+                </span>
+              </button>
+              <button name="paper" onClick={(e) => chooseChip(e)}>
+                <span className="wrapper-chip paper-chip">
+                  <span className="chip-image">
+                    <Image src={iconPaper} alt="logo"></Image>
+                  </span>
+                </span>
+              </button>
+              <button name="rock" onClick={(e) => chooseChip(e)}>
+                <span className="wrapper-chip rock-chip">
+                  <span className="chip-image">
+                    <Image src={iconRock} alt="logo"></Image>
+                  </span>
+                </span>
+              </button>
+              <button name="lizard" onClick={(e) => chooseChip(e)}>
+                <span className="wrapper-chip lizard-chip">
+                  <span className="chip-image">
+                    <Image src={iconLizard} alt="logo"></Image>
+                  </span>
+                </span>
+              </button>
+              <button name="spock" onClick={(e) => chooseChip(e)}>
+                <span className="wrapper-chip spock-chip">
+                  <span className="chip-image">
+                    <Image src={iconSpock} alt="logo"></Image>
+                  </span>
+                </span>
+              </button>
+            </div>
+          ) : null}
+          {playing ? (
+            <RpsPlaying
+              youPicked={youPicked}
+              youWon={youWon}
+              housePicked={housePicked}
+              showResult={showResult}
+              result={result}
+              playAgain={playAgain}
+            ></RpsPlaying>
+          ) : null}
+        </div>
+        <RpsRules imageRules={advanceRules} points="2 points"></RpsRules>
+      </main>
+    </>
   );
 };
 

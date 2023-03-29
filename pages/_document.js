@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>RPS Game</title>
         <link rel="shortcut icon" href="/favicon.png" />
         <meta
           name="description"
