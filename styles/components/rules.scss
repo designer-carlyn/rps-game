@@ -1,104 +1,133 @@
-.rules-wrapper {
+.rules-container {
   margin: auto 30px 30px auto;
+  display: flex;
+  align-items: center;
+  grid-gap: 20px;
 
-  @media screen and (max-width: 800px) {
-    margin: auto auto 30px;
-  }
-  
-  button {
-    text-transform: uppercase;
-    font-size: 22px;
-    min-width: 150px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 2px solid var(--white-color);
+  .home-link {
+    border: 1px solid var(--white-color);
     background: transparent;
-    color: var(--white-color);
-    cursor: pointer;
+    border-radius: 10px;
+    min-width: 70px;
+    padding: 10px;
+
+    img {
+      filter: invert(1);
+      height: auto;
+      width: 32px;
+      margin: auto;
+    }
 
     &:hover {
       background: var(--white-color);
       color: var(--dark-color);
-    }
-  }
 
-  &__modal {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    top: 50%;
-    width: 100%;
-    max-width: 350px;
-    transform: translate(-50%, -50%) scale(0);
-    z-index: 99;
-    background: var(--white-color);
-    border-radius: 10px;
-    box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.2);
-    transition: all 0.2s ease-in-out;
-    transform-origin: center center;
-
-    .modal-header {
-      padding: 20px 30px 0;
-      color: var(--dark-color);
-      display: flex;
-      align-items: center;
-
-      .title {
-        position: relative;
-    
-        small {
-          position: absolute;
-          background: var(--dark-color);
-          color: var(--white-color);
-          padding: 2px 3px;
-          border-radius: 50px;
-          min-width: 100px;
-          text-align: center;
-          top: 0;
-          left: 70px;
-        }
-      }
-
-      button {
-        background: transparent;
-        border: 0;
-        outline: 0;
-        margin-left: auto;
-        min-width: 0;
-
-        img {
-          height: auto;
-          width: auto;
-        }
-      }
-    }
-
-    .modal-image {
-      padding: 20px 30px 30px;
       img {
-        width: auto;
-        height: auto;
+        filter: invert(0);
       }
-    }
-
-    &.active {
-      transform: translate(-50%, -50%) scale(1);
-      transition: all 0.2s ease-in-out;
     }
   }
 
-  .overlay {
-    background: rgba(0,0,0,0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 98;
-    display: none;
-
-    &.active {
-      display: block;
+  .rules-wrapper {
+    button {
+      text-transform: uppercase;
+      font-size: 22px;
+      min-width: 150px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid var(--white-color);
+      background: transparent;
+      color: var(--white-color);
+      cursor: pointer;
+  
+      &:hover {
+        background: var(--white-color);
+        color: var(--dark-color);
+      }
     }
+  
+    &__modal {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      top: 50%;
+      width: 100%;
+      max-width: 350px;
+      transform: translate(-50%, -50%) scale(0);
+      z-index: 99;
+      background: var(--white-color);
+      border-radius: 10px;
+      box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.2);
+      transition: all 0.2s ease-in-out;
+      transform-origin: center center;
+  
+      .modal-header {
+        padding: 20px 30px 0;
+        color: var(--dark-color);
+        display: flex;
+        align-items: center;
+  
+        .title {
+          position: relative;
+      
+          small {
+            position: absolute;
+            background: var(--dark-color);
+            color: var(--white-color);
+            padding: 2px 3px;
+            border-radius: 50px;
+            min-width: 100px;
+            text-align: center;
+            top: 0;
+            left: 70px;
+          }
+        }
+  
+        button {
+          background: transparent;
+          border: 0;
+          outline: 0;
+          margin-left: auto;
+          min-width: 0;
+  
+          img {
+            height: auto;
+            width: auto;
+          }
+        }
+      }
+  
+      .modal-image {
+        padding: 20px 30px 30px;
+        img {
+          width: auto;
+          height: auto;
+        }
+      }
+  
+      &.active {
+        transform: translate(-50%, -50%) scale(1);
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  
+    .overlay {
+      background: rgba(0,0,0,0.5);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 98;
+      display: none;
+  
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    margin: auto auto 30px;
   }
 }
