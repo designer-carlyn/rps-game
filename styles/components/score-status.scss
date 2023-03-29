@@ -12,7 +12,7 @@
     border-radius: 10px;
     padding: 10px;
     text-align: center;
-    width: 130px;
+    min-width: 130px;
     min-height: 85px;
 
     &:nth-child(2) {
@@ -37,6 +37,25 @@
       justify-content: center;
       grid-gap: 5px;
       margin-top: 5px;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    .status-item {
+      min-width: 100px;
+      min-height: 40px;
+      padding: 10px 10px 12px;
+
+      small {
+        color: var(--score-color);
+        font-size: 14px;
+      }
+
+      .item-best {
+        font-size: 30px;
+        line-height: 1;
+        color: #007C00;
+      }
     }
   }
 }

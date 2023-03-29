@@ -1,6 +1,12 @@
 .rps-original {
-  padding: 40px 0;
+  padding: 40px 0 0;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (max-width: 800px) {
+    padding: 20px 0 0;
+  }
 
   &__header {
     margin-bottom: 70px;
@@ -14,7 +20,7 @@
     min-height: 350px;
     width: 100%;
     height: 100%;
-    margin: 120px auto 0;
+    margin: 120px auto;
     position: relative;
 
     button {
@@ -62,6 +68,28 @@
         justify-content: center;
         position: relative;
         z-index: -1;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      margin: 60px auto 0;
+    }
+
+    @media screen and (max-width: 425px) {
+      max-width: 220px;
+      min-height: 220px;
+      margin: 100px auto 0;
+
+      button {
+        &[name="paper"] {
+          top: -20%;
+          left: -20%;
+        }
+  
+        &[name="scissors"] {
+          top: -20%;
+          right: -20%;
+        }
       }
     }
   }

@@ -18,6 +18,62 @@
       height: 70px;
       object-fit: contain;
     }
+
+    @media screen and (max-width: 425px) {
+      width: 90px;
+      height: 90px;
+      margin: 13px;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  &.wrapper-chip--lg {
+    width: 250px;
+    height: 250px;
+
+    .chip-image {
+      width: 200px;
+      height: 200px;
+
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 200px;
+      height: 200px;
+
+      .chip-image {
+        width: 150px;
+        height: 150px;
+
+        img {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 130px;
+      height: 130px;
+
+      .chip-image {
+        width: 100px;
+        height: 100px;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
   }
 
   &.paper-chip {
@@ -68,17 +124,5 @@
   &.winner-spock-chip {
     background: var(--spock-gradient);
     box-shadow: 0px 0px 0px 50px rgba(255,255,255,0.03), 0px 0px 0px 100px rgba(255,255,255,0.01), 0px 0px 0px 150px rgba(255,255,255,0.01), #2a8bae 1px 10px 0px -2px;
-  }
-
-  &.wrapper-chip--lg {
-    .chip-image {
-      width: 200px;
-      height: 200px;
-
-      img {
-        width: 100px;
-        height: 100px;
-      }
-    }
   }
 }
